@@ -112,6 +112,49 @@ namespace ConditionalPracticeProblems
 
             //Console.WriteLine(sum / 4 + " is the mean of your integers.");
 
+            Console.WriteLine("Enter a number between one and nine.");
+
+            int fizzNumber = int.Parse(Console.ReadLine()); //user enters fizzbuzz number
+
+            if (fizzNumber < 1 || fizzNumber > 9) //check if user entered number between 1 and 9
+            {
+                Console.WriteLine("Please try again. (Be sure the numbers you entered are between one and nine.)"); //response if number entered incorrectly
+            }
+            else // consider entering return; here instead of else
+            {
+                Console.WriteLine("Enter a second number between one and nine."); //response if number entered correctly
+            }
+
+            int buzzNumber = int.Parse(Console.ReadLine());
+
+            if (buzzNumber < 1 || buzzNumber > 9)
+            {
+                Console.WriteLine("Please try again. (Be sure the numbers you entered are between one and nine.)");
+            }
+            else // consider entering return; here instead of else
+            {
+                Console.WriteLine("Enter a test number.");
+            }
+            
+            int testNumber = int.Parse(Console.ReadLine());
+
+            if (testNumber % fizzNumber == 0 && testNumber % buzzNumber == 0) // if test number is a multiple of fizz and buzz
+            {
+                Console.WriteLine("FizzBuzz!");
+            }
+            else if (testNumber % fizzNumber == 0) // if test number is a multiple of fizz
+            {
+                Console.WriteLine("Fizz!");
+            }
+            else if (testNumber % buzzNumber == 0) // if test number is a multiple of buzz
+            {
+                Console.WriteLine("Buzz!");
+            }
+            else if (testNumber % fizzNumber != 0 && testNumber % buzzNumber != 0) // if test number is NOT a multiple of buzz and fizz
+            {
+                Console.WriteLine(testNumber);
+            }
+
         }
-    }
+        }
 }
